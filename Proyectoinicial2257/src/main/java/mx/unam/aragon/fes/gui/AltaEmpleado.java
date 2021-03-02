@@ -6,6 +6,8 @@
 
 package mx.unam.aragon.fes.gui;
 
+import mx.unam.aragon.fes.Empleado;
+
 /**
  *
  * @author Kevin Ulises Tirado Del Rosal:
@@ -67,6 +69,8 @@ public class AltaEmpleado extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,6 +93,12 @@ public class AltaEmpleado extends javax.swing.JFrame {
         jLabel12.setText("Colonia:");
 
         jLabel13.setText("Delegacion:");
+
+        jTextField15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField15ActionPerformed(evt);
+            }
+        });
 
         jLabel14.setText("Cp:");
 
@@ -338,24 +348,49 @@ public class AltaEmpleado extends javax.swing.JFrame {
             }
         });
 
+        jButton5.setText("Nuevo Registro");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jButton6.setText("Enviar");
+        jButton6.setEnabled(false);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 73, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(jButton4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 73, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(140, 140, 140)
-                .add(jButton2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 73, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 73, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(51, 51, 51))
             .add(layout.createSequentialGroup()
                 .addContainerGap()
-                .add(jTabbedPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 935, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(layout.createSequentialGroup()
+                        .add(jButton5)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jButton6)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 73, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(jButton4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 73, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(140, 140, 140)
+                        .add(jButton2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 73, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 73, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(51, 51, 51))
+                    .add(layout.createSequentialGroup()
+                        .add(jTabbedPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 935, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(20, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -367,7 +402,9 @@ public class AltaEmpleado extends javax.swing.JFrame {
                     .add(jButton3)
                     .add(jButton4)
                     .add(jButton2)
-                    .add(jButton1))
+                    .add(jButton1)
+                    .add(jButton5)
+                    .add(jButton6))
                 .add(32, 32, 32))
         );
 
@@ -393,6 +430,49 @@ public class AltaEmpleado extends javax.swing.JFrame {
     private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField8ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        System.out.println("Nuevo empleado")
+        this.limpiarFormulario();
+        Empleado emp= new Empleado():
+        emp.setNombre( this.jText.Field1.getText());
+        emp.setApPaterno( this.jText.Field2.getText());
+        emp.setApMaterno( jText.Field3.getText());
+        emp.setEdad(Integer.parseInt(jtField4.getText()) );//convierte a int
+        emp.setCurp( jText.Field5.getText());
+        emp.getDomicilio().setCalle(this.jText.Field6.getText()); 
+//GEN-LAST:event_jButton5MouseClicked
+        
+    }//GEN-LAST:event_jButton5MouseClicked
+    private void limpiarFormulario(){
+        this.jtTextField1.setText("");
+        this.jtTextField2.setText("");
+        this.jtTextField3.setText("");
+        this.jtTextField4.setText("");
+        this.jtTextField5.setText("");
+        this.jtTextField6.setText("");
+        this.jtTextField7.setText("");
+        this.jtTextField8.setText("");
+        this.jtTextField9.setText("");
+        this.jtTextField10.setColumns(10);
+        this.jtTextField11.setText("");
+        this.jtTextField12.setText("");
+        this.jtTextField13.setText("");
+        this.jtTextField14.setText("");
+        
+    }
+    
+    private void jTextField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField15ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField15ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -434,6 +514,8 @@ public class AltaEmpleado extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
