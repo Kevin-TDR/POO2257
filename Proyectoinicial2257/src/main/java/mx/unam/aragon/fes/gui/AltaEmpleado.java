@@ -440,17 +440,24 @@ public class AltaEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
-        System.out.println("Nuevo empleado")
+        System.out.println("Nuevo empleado");
         this.limpiarFormulario();
-        Empleado emp= new Empleado():
+        Empleado emp= new Empleado();
         emp.setNombre( this.jText.Field1.getText());
         emp.setApPaterno( this.jText.Field2.getText());
         emp.setApMaterno( jText.Field3.getText());
         emp.setEdad(Integer.parseInt(jtField4.getText()) );//convierte a int
         emp.setCurp( jText.Field5.getText());
         emp.getDomicilio().setCalle(this.jText.Field6.getText()); 
-//GEN-LAST:event_jButton5MouseClicked
-        
+        emp.getDomicilio().setNumero(this.jText.Field7.getText());                             
+        emp.getDomicilio().setColonia(this.jText.Field8.getText());
+        emp.getDomicilio().setDelegacion(this.jText.Field9.getText());
+        emp.getDomicilio().setEstado(this.jText.Field10.getText());
+        emp.setNumeroEmpleado(Integer.parseInt(this.jTextField11.getText()));
+        emp.setDepartamento(this.jTextField12.getText());
+        emp.setSueldo(Float.parseFloat(this.jTextField13.getText()));
+        emp.setHorasExtra(Integer.parseInt(this.jTextField14.getText()));
+        int confirmar = J0ptionPane.showConfirmDialog(this, "¿Deseas guardar estos datos?");
     }//GEN-LAST:event_jButton5MouseClicked
     private void limpiarFormulario(){
         this.jtTextField1.setText("");
